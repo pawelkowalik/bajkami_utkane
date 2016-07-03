@@ -61,12 +61,12 @@ blockquote.pull-right {border-right: 5px solid #999;}
 /**************************************
 / Header
 **************************************/
-.logo { margin-top: 30px; margin-bottom: 30px;}
+.logo { margin-top: 3%; margin-bottom: 3%;}
 .logo img {  }
 .logo h5 { display: inline-block; }
 .headline { }
 .gallery {background-color: #ffffff; padding-top: 20px; padding-bottom: 20px;}
-.gallery img {margin: 5px; filter: grayscale(50%);}
+.gallery img {margin: 5px; filter: grayscale(50%); max-width: 97%;}
 .gallery img:hover { filter: grayscale(0%);}
 /* Landscape phones and down */
 @media (max-width: 480px) {
