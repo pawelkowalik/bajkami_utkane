@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="row headline">
+        <div class="span12">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><a href="#"><img src="{% static 'img/gallery/slider-1.jpg' %}" alt="slider" /></a></li>
+                <li><a href="#"><img src="{% static 'img/gallery/slider-2.jpg' %}" alt="slider" /></a></li>
+                <li><a href="#"><img src="{% static 'img/gallery/slider-3.jpg' %}" alt="slider" /></a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

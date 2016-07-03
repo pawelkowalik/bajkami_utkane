@@ -1,0 +1,123 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bajkami utkane</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS
+================================================== -->
+<link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" />
+<link rel="stylesheet" href="{% static 'css/slicknav.css' %}" />
+<link rel="stylesheet" href="{% static 'lightbox/lightbox.css' %}">
+<link rel="stylesheet" href="{% static 'css/custom-styles.css' %}">
+
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="css/style-ie.css"/>
+<![endif]--> 
+
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+
+<!-- JS
+================================================== -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+<script src="{% static 'js/jquery.custom.js' %}"></script>
+<script src="{% static 'lightbox/lightbox.js' %}"></script>
+<script type="text/javascript">
+
+ $(window).load(function(){
+
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+    });
+     $('#menu').slicknav({
+         prependTo: '#menu-mobile'
+     });
+});
+</script>
+
+</head>
+
+<body class="home">
+    <div class="container">
+    
+      <div class="row header"><!-- Begin Header -->
+      
+        <!-- Logo
+        ================================================== -->
+           <div class="span12 logo">
+               <center><img src="{% static 'img/logo_3.jpg' %}"></center>
+           </div>
+      </div>
+      <div class="row header"><!-- Begin Header -->
+        <!-- Main Navigation
+        ================================================== -->
+
+        <div class="span12 navigation">
+            <div class="navbar hidden-phone" >
+                    <a class="active" href="{% url 'index' %}">Start</a>
+                    <a href="{% url 'gallery-list' %}">Portfolio</a>
+                    <a href="{% url 'offer' %}">Oferta</a>
+                    <a href="{% url 'contact' %}">Kontakt</a>
+
+            </div>
+
+            <!-- Mobile Nav
+            ================================================== -->
+            <div id="menu-mobile" class="visible-phone">
+                <ul id="menu">
+                    <li><a class="scroll" href="{% url 'index' %}">Start</a></li>
+                    <li><a class="scroll" href="{% url 'gallery-list' %}">Portfolio</a></li>
+                    <li><a class="scroll" href="{% url 'offer' %}">Oferta</a></li>
+                    <li><a class="scroll" href="{% url 'contact' %}">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+      </div><!-- End Header -->
+        {% block content %}
+        {% endblock %}
+    </div> <!-- End Container -->
+
+    <!-- Footer Area
+        ================================================== -->
+
+	<div class="footer-container"><!-- Begin Footer -->
+    	<div class="container">
+
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">Projekt i realizacja: Paweł Kowalik. Wszelkie prawa zastrzeżone.</span></div>
+                        <div class="span6">
+                            <span class="right">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+
+        </div>
+    </div><!-- End Footer --> 
+    
+    <!-- Scroll to Top -->  
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+<script src="{% static 'lightbox/lightbox.js' %}"></script>
+</body>
+</html>
