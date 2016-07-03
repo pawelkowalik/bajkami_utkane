@@ -1,20 +1,12 @@
 *.py[co]
 
-<<<<<<< HEAD
 .coverage
-=======
->>>>>>> 2-add_training_form
 .idea/
 
 media
 *.sqlite3
-aikiwaw/**
-static/avatars/**
-static/dojo/**
-<<<<<<< HEAD
 static/galleries/**
-=======
->>>>>>> 73371e48d13717d1ac45048de69215a277ebf18d
+bajkami/**
 
 CACHE
 __pycache__
