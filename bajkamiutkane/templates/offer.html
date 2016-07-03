@@ -1,2 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% block navigation_computer %}
+            <div class="navbar hidden-phone" >
+                    <a href="{% url 'index' %}">Start</a>
+                    <a href="{% url 'gallery-list' %}">Portfolio</a>
+                    <a class="active" href="{% url 'offer' %}">Oferta</a>
+                    <a href="{% url 'before' %}">Przed sesją</a>
+                    <a href="{% url 'about' %}">O mnie</a>
+                    <a href="{% url 'contact' %}">Kontakt</a>
+
+            </div>
+
+{% endblock %}

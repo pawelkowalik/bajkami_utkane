@@ -1,36 +1,50 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block content %}
-    <div class = "row header">
+{% block navigation_computer %}
+            <div class="navbar hidden-phone" >
+                    <a href="{% url 'index' %}">Start</a>
+                    <a class="active" href="{% url 'gallery-list' %}">Portfolio</a>
+                    <a href="{% url 'offer' %}">Oferta</a>
+                    <a href="{% url 'before' %}">Przed sesją</a>
+                    <a href="{% url 'about' %}">O mnie</a>
+                    <a href="{% url 'contact' %}">Kontakt</a>
 
+            </div>
+
+{% endblock %}
+{% block content %}
+    <div class = "row header" style=" padding-bottom: 0px!important; margin-bottom: 0px!important;">
             {% for gallery in gallery_list %}
                 {% ifequal gallery.slug "spring" %}
-                    <div class = "span12 gallery">
+                    <div class="span2"></div>
+                    <div class = "span8 gallery">
                     <div class = "span1"></div>
-                    <div class = "span5">
-                        <h3><center>{{ gallery.name }}</center></h3>
+                    <div class = "span3">
+                        <h4><center>{{ gallery.name }}</center></h4>
                         <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
                     </div>
                 {% endifequal %}
                 {% ifequal gallery.slug "summer" %}
-                    <div class = "span5">
-                        <h3><center>{{ gallery.name }}</center></h3>
+                    <div class = "span3">
+                        <h4><center>{{ gallery.name }}</center></h4>
                         <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                    </div><div class="span1"></div></div>
+                    </div><div class="span1"></div></div></div>
                 {% endifequal %}
                 {% ifequal gallery.slug "autumn" %}
-                    <div class = "span12 gallery">
+                    <div class = "row header">
+                    <div class="span2"></div>
+                    <div class = "span8 gallery">
                     <div class = "span1"></div>
-                    <div class = "span5">
-                        <h3><center>{{ gallery.name }}</center></h3>
+                    <div class = "span3">
+                        <h4><center>{{ gallery.name }}</center></h4>
                         <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
                     </div>
                 {% endifequal %}
                 {% ifequal gallery.slug "winter" %}
-                    <div class = "span5">
-                        <h3><center>{{ gallery.name }}</center></h3>
+                    <div class = "span3">
+                        <h4><center>{{ gallery.name }}</center></h4>
                         <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                    </div><div class="span1"></div></div>
+                    </div><div class="span1"></div></div></div>
                 {% endifequal %}
             {% endfor %}
         </div>

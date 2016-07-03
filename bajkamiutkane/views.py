@@ -17,6 +17,18 @@ def contact(request):
             context_instance=RequestContext(request))
 
 
+def before(request):
+    return render_to_response('before.html',
+            {'': ''},
+            context_instance=RequestContext(request))
+
+
+def about(request):
+    return render_to_response('about.html',
+            {'': ''},
+            context_instance=RequestContext(request))
+
+
 def offer(request):
     return render_to_response('offer.html',
             {'': ''},

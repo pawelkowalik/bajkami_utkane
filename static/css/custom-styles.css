@@ -23,7 +23,6 @@ h1, h2, h3, h4 , h5, h6 {
 	font-weight: normal;
 	text-transform:uppercase; 
 }	
-h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(141, 141, 141, 0.5), 0 0 1px #fdfdfd;}
 h1.title-bg, h2.title-bg, h3.title-bg, h4.title-bg , h5.title-bg, h6.title-bg {
 	background:#f8f8f8; 
 	padding:10px 5px;
@@ -66,8 +65,8 @@ blockquote.pull-right {border-right: 5px solid #999;}
 .logo h5 { display: inline-block; }
 .headline { }
 .gallery {background-color: #ffffff; padding-top: 20px; padding-bottom: 20px;}
-.gallery img {margin: 5px; filter: grayscale(50%); max-width: 97%;}
-.gallery img:hover { filter: grayscale(0%);}
+.gallery img {margin: 5px; max-width: 97%;}
+.gallery img:hover { filter: brightness(110%);}
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	.logo, .navigation {text-align: center;}
@@ -95,7 +94,8 @@ blockquote.pull-right {border-right: 5px solid #999;}
 }
 
 .navbar > a:focus,
-.navbar > a:hover {
+.navbar > a:hover,
+.navbar > .active {
 	text-decoration: none;
 	color: #8B457F;
 }
@@ -201,13 +201,13 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; position: relative; m
 **************************************/
 .footer-container {
 	width:100%;
-	background:#333;
+	background:#c0bfba;
 	clear: both;
  	position: relative;
  	z-index: 10;
 }
 .footer-row { margin-top: 30px;}
-.footer-col {color:#ababab; font-size: 11px;}
+.footer-col {color:#ffffff; font-size: 11px;}
 .footer-col a {color:#dcdcdc; font-weight: bold;}
 .footer-col a:hover {color: #732800; text-decoration: none;}
 .footer-col h5, .footer-col strong {color:#f9f9f9; text-shadow:none;}
@@ -267,7 +267,7 @@ a.forrst{background-position: -208px 0px;}
 a.forrst:hover {background-position: -208px -47px;}
 
 /**** Sub Footer ****/
-.footer-sub {background: #1f1f1f; padding: 10px 0px;}
+.footer-sub {background: #c0bfba; padding: 10px 0px;}
 .footer-sub div div span {padding: 0px 20px;}
 
 

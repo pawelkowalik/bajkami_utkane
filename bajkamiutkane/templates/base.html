@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Bajkami utkane</title>
+<title>bajkami utkane</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CSS
@@ -63,7 +63,7 @@
         <!-- Logo
         ================================================== -->
            <div class="span12 logo">
-               <center><img src="{% static 'img/logo_3.jpg' %}"></center>
+               <center><a href="{% url 'index' %}"><img src="{% static 'img/bajkami_logo.jpg' %}"></a></center>
            </div>
       </div>
       <div class="row header"><!-- Begin Header -->
@@ -71,14 +71,8 @@
         ================================================== -->
 
         <div class="span12 navigation">
-            <div class="navbar hidden-phone" >
-                    <a class="active" href="{% url 'index' %}">Start</a>
-                    <a href="{% url 'gallery-list' %}">Portfolio</a>
-                    <a href="{% url 'offer' %}">Oferta</a>
-                    <a href="{% url 'contact' %}">Kontakt</a>
-
-            </div>
-
+            {% block navigation_computer %}
+            {% endblock %}
             <!-- Mobile Nav
             ================================================== -->
             <div id="menu-mobile" class="visible-phone">
@@ -86,6 +80,8 @@
                     <li><a class="scroll" href="{% url 'index' %}">Start</a></li>
                     <li><a class="scroll" href="{% url 'gallery-list' %}">Portfolio</a></li>
                     <li><a class="scroll" href="{% url 'offer' %}">Oferta</a></li>
+                    <li><a class="scroll" href="{% url 'before' %}">Przed sesją</a></li>
+                    <li><a class="scroll" href="{% url 'about' %}">O mnie</a></li>
                     <li><a class="scroll" href="{% url 'contact' %}">Kontakt</a></li>
                 </ul>
             </div>
@@ -102,7 +98,8 @@
     	<div class="container">
 
             <div class="row"><!-- Begin Sub Footer -->
-                <div class="span12 footer-col footer-sub">
+                <div class = "span2"></div>
+                <div class="span8 footer-col footer-sub">
                     <div class="row no-margin">
                         <div class="span6"><span class="left">Projekt i realizacja: Paweł Kowalik. Wszelkie prawa zastrzeżone.</span></div>
                         <div class="span6">
