@@ -18,7 +18,7 @@
         <div class = "gallery span8">
             <div class="span1"></div>
             <div class="span6">
-            <h4>&nbsp;&nbsp;{{ gallery.name }}</h4>
+            <h5>&nbsp;&nbsp;{{ gallery.name }}</h5>
             {% for image in gallery.image_set.all %}
                 <a href="{{ STATIC_URL|cut:"static/" }}{{image.image }}" data-lightbox="image" data-title=
 			{% if image.description %}
