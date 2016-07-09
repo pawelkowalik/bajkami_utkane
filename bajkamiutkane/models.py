@@ -42,30 +42,3 @@ class Image(models.Model):
     def __unicode__(self):
         return self.image.name
 
-    def create_thumbnail(self):
-        if not self.image:
-            return
-
-        THUMBNAIL_SIZE = (300, 250)
-        DJANGO_TYPE = self.image.file.content_type
-
-        if DJANGO_TYPE == 'image/jpeg':
-            PIL_TYPE = 'jpeg'
-            FILE_EXTENSION = 'jpg'
-        elif DJANGO_TYPE == 'image/png':
-            PIL_TYPE = 'png'
-            FILE_EXTENSION = 'png'
-        image = ImagePIL.open(StringIO(self.image.read()))
-        image.thumbnail(THUMBNAIL_SIZE, ImagePIL.ANTIALIAS)
-        temp_handle = StringIO()
-        image.save(temp_handle, PIL_TYPE)
-        temp_handle.seek(0)
-        suf = SimpleUploadedFile(os.path.split(self.image.name)[-1], temp_handle.read(), content_type=DJANGO_TYPE)
-        self.thumbnail.save('%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], FILE_EXTENSION), suf, save=False)
-
-    def save(self, *args, **kwargs):
-        self.create_thumbnail()
-        force_update = False
-        if self.id:
-            force_update = True
-        super(Image, self).save(force_update=force_update)

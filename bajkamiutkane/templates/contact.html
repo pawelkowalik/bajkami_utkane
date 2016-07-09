@@ -12,3 +12,39 @@
             </div>
 
 {% endblock %}
+{% block content %}
+    <div class="row headline">
+        <div class="span2"></div>
+        <div class = "gallery span8">
+            <div class="span1"></div>
+            <div class="span6 contact"><!--Begin page content column-->
+
+            <h5>Bajkami Utkane</h5>
+            <p><i class="icon-envelope"></i>kontakt@bajkami-utkane.pl<br>
+            <i class="icon-bell"></i>+48 504 781 984<br>
+            <i class="icon-thumbs-up"></i>facebook.com/bajkamiutkane
+            </p>
+            <br><br>
+                <h5>Napisz do mnie</h5>
+            <form action="#" id="contact-form">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Imię i nazwisko">
+                </div>
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Adres e-mail">
+                </div>
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-globe"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Strona internetowa">
+                </div>
+                <textarea class="span5" style="height: 200px;"></textarea><br>
+                <input type="submit" class="btn" value="Wyślij">
+
+            </form>
+
+        </div>
+        </div>
+    </div>
+{% endblock %}

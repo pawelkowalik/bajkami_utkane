@@ -13,40 +13,19 @@
 
 {% endblock %}
 {% block content %}
-    <div class = "row header" style=" padding-bottom: 0px!important; margin-bottom: 0px!important;">
+    <div class="row headline">
+        <div class="span2"></div>
+        <div class = "gallery span8">
+            <div class="span1"></div>
+            <div class="span6">
             {% for gallery in gallery_list %}
-                {% ifequal gallery.slug "spring" %}
-                    <div class="span2 bgwhite"></div>
-                    <div class = "span8 gallery" style=" padding-bottom: 0px!important;">
-                    <div class = "span1 bgwhite"></div>
-                    <div class = "span3 bgwhite">
-                        <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                        <h5><center>{{ gallery.name }}</center></h5>
-                    </div>
-                {% endifequal %}
-                {% ifequal gallery.slug "summer" %}
-                    <div class = "span3 bgwhite">
-                        <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                        <h5><center>{{ gallery.name }}</center></h5>
-                    </div><div class="span1"></div></div></div>
-                {% endifequal %}
-                {% ifequal gallery.slug "autumn" %}
-                    <div class = "row header">
-                    <div class="span2 bgwhite"></div>
-                    <div class = "span8 gallery">
-                    <div class = "span1 bgwhite"></div>
-                    <div class = "span3 bgwhite">
-                        <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                        <h5><center>{{ gallery.name }}</center></h5>
-                    </div>
-                {% endifequal %}
-                {% ifequal gallery.slug "winter" %}
-                    <div class = "span3 bgwhite">
-                        <a href="{% url 'gallery-detail' gallery.slug %}"><img src="{{ STATIC_URL|cut:"static/" }}{{ gallery.cover }}"></a>
-                        <h5><center>{{ gallery.name }}</center></h5>
-                    </div><div class="span1"></div></div></div>
-                {% endifequal %}
+            {% for image in gallery.image_set.all %}
+                <a href="{{ STATIC_URL|cut:"static/" }}{{image.image }}" data-lightbox="image" data-title="">
+                    <img src="{{ STATIC_URL|cut:'static/' }}{{ image.thumbnail }}">
+                </a>
             {% endfor %}
+            {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

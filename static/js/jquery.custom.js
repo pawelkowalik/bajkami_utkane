@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$('img').hide();
+	$('img').fadeIn(1500);
 
 //////////Bootstrap Selecters //////////
 $("[rel=tooltip]").tooltip();
@@ -33,20 +35,5 @@ function imgfeedHover() {
  $(".post-list li:first-child").css("padding-top", "0px");
  $(".page-sidebar h5:first, .page-left-sidebar h5:first, .page-right-sidebar h5:first").css("margin-top", "0px");
  $('h5.title-bg').has('button').css("padding-bottom", "12px");
-
-////////// Back to Top //////////
-	$(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() != 0) {
-			$('#toTop').fadeIn();	
-		} else {
-			$('#toTop').fadeOut();
-		}
-	});
- 
-	$('#toTop').click(function() {
-		$('body,html').animate({scrollTop:0},800);
-	});	
-});
 
 }); // End document.ready
