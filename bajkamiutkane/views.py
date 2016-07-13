@@ -40,7 +40,7 @@ def contact(request):
         email = EmailMessage(
             "Nowy e-mail z bajkami-utkane.pl",
             content,
-            "bajkami-utkane.pl",
+            "kontakt@bajkami-utkane.pl",
             ['kontakt@bajkami-utkane.pl'],
             headers = {'Odpisz-do': contact_email }
         )
