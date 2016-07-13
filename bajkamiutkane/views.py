@@ -1,8 +1,14 @@
-from django.shortcuts import render_to_response
+# -*- coding: utf-8 -*-
+
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from django.template import Context
+from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
 from django.views import generic
 
 from bajkamiutkane.models import Gallery
+from bajkamiutkane.forms import ContactForm
 
 
 def index(request):
@@ -12,9 +18,36 @@ def index(request):
 
 
 def contact(request):
-    return render_to_response('contact.html',
-            {'': ''},
-            context_instance=RequestContext(request))
+    form_class = ContactForm(request.POST or None)
+
+    if form_class.is_valid():
+        contact_name = form_class.cleaned_data['contact_name'],
+        contact_email = form_class.cleaned_data['contact_email'],
+        contact_webpage = form_class.cleaned_data['contact_webpage'],
+        form_content = form_class.cleaned_data['content'],
+
+        # Email the profile with the
+        # contact information
+        template = get_template('contact_template.txt')
+        context = Context({
+            'contact_name': contact_name,
+            'contact_email': contact_email,
+            'contact_webpage': contact_webpage,
+            'form_content': form_content,
+        })
+        content = template.render(context)
+
+        email = EmailMessage(
+            "Nowy e-mail z bajkami-utkane.pl",
+            content,
+            "Twoja strona" +'',
+            ['kontakt@bajkami-utkane.pl'],
+            headers = {'Odpisz-do': contact_email }
+        )
+        email.send()
+        return redirect('about')
+    else:
+        return render(request, 'contact.html', {'form': form_class})
 
 
 def before(request):

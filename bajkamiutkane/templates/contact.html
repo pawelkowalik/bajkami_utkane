@@ -26,22 +26,36 @@
             </p>
             <br><br>
                 <h5>Napisz do mnie</h5>
-            <form action="#" id="contact-form">
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span>
-                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Imię i nazwisko">
-                </div>
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-envelope"></i></span>
-                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Adres e-mail">
-                </div>
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-globe"></i></span>
-                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Strona internetowa">
-                </div>
-                <textarea class="span5" style="height: 200px;"></textarea><br>
-                <input type="submit" class="btn" value="Wyślij">
-
+            <form role="form" action="" method="post" id="contact-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name == 'contact_name' %}
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-user"></i></span>
+                        <input class="span4" id="id_contact_name" name="contact_name" type="text" placeholder="Imię i nazwisko"/>
+                        {% for error in field.errors %}{{ error }}{% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if field.name == 'contact_email' %}
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-envelope"></i></span>
+                        <input class="span4" id="id_contact_email" name="contact_email" type="email" placeholder="Email"/>
+                        {% for error in field.errors %}{{ error }}{% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if field.name == 'contact_webpage' %}
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-globe"></i></span>
+                        <input class="span4" id="id_contact_webpage" name="contact_webpage" type="text" placeholder="Strona internetowa"/>
+                        {% for error in field.errors %}{{ error }}{% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if field.name == 'content' %}
+                    <textarea id="id_content" name="content" class="span5" style="height: 200px;"></textarea><br>
+</textarea>         {% for error in field.errors %}{{ error }}<br>{% endfor %}
+                    <input type="submit" class="btn" value="Wyślij">
+                    {% endif %}
+                {% endfor %}
             </form>
 
         </div>
