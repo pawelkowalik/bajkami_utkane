@@ -1,8 +1,0 @@
-Od:
-{{ contact_name }}
-
-Email:
-{{ contact_email }}
-
-Treść:
-{{ form_content|safe|striptags }}

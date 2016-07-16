@@ -20,7 +20,7 @@
             <div class="span6">
             {% for gallery in gallery_list %}
             {% for image in gallery.image_set.all %}
-                <a href="{{ STATIC_URL|cut:"static/" }}{{image.image }}" data-lightbox="image" data-title="">
+                <a href="{{ STATIC_URL|cut:"static/" }}{{image.image }}" data-lightbox="image">
                     <img src="{{ STATIC_URL|cut:'static/' }}{{ image.thumbnail }}">
                 </a>
             {% endfor %}

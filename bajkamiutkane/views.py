@@ -28,7 +28,7 @@ def contact(request):
 
         # Email the profile with the
         # contact information
-        template = get_template('contact_template.txt')
+        template = get_template('contact_template.html')
         context = Context({
             'contact_name': contact_name,
             'contact_email': contact_email,
