@@ -4,14 +4,14 @@
 </head>
 <body>
 
-Od:
-{{ contact_name }}
+<b>Od:</b>
+{{ contact_name|safe|cut:"('"|cut:"',)" }}<br><br>
 
-Email:
-{{ contact_email }}
+<b>Email:</b>
+{{ contact_email|safe|cut:"('"|cut:"',)" }}<br><br>
 
 Treść:
-{{ form_content|safe|striptags }}
+{{ form_content|safe|striptags|cut:"('"|cut:"',)" }}
 
 </body>
 </html>
