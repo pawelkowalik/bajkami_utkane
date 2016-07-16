@@ -41,7 +41,7 @@ def contact(request):
             "Nowy e-mail z bajkami-utkane.pl",
             content,
             "kontakt@bajkami-utkane.pl",
-            [contact_email],
+            ["kontakt@bajkami-utkane.pl"],
             headers = {'Odpisz-do': contact_email }
         )
         email.content_subtype = "html"
