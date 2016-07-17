@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block navigation_computer %}
+            <div class="navbar hidden-phone" >
+                    <a href="{% url 'index' %}">Start</a>
+                    <a href="{% url 'gallery-list' %}">Portfolio</a>
+                    <a href="{% url 'offer' %}">Oferta</a>
+                    <a href="{% url 'before' %}">Przed sesją</a>
+                    <a href="{% url 'about' %}">O mnie</a>
+                    <a class="active" href="{% url 'contact' %}">Kontakt</a>
+
+            </div>
+
+{% endblock %}
+{% block content %}
+    <div class="row headline">
+        <div class="span2"></div>
+        <div class = "gallery span8">
+            <div class="span1"></div>
+            <div class="span6 success">
+                <center><h5>Twoja wiadomość została wysłana, dziękuję!</h5>
+                <br><br>
+                <h6><a href="{% url 'index' %}">Powrót do strony głównej</a></h6>
+                </center>
+        </div>
+    </div>
+{% endblock %}

@@ -47,7 +47,7 @@ def contact(request):
         )
         email.content_subtype = "html"
         email.send()
-        return redirect('about')
+        return redirect('success')
     else:
         return render(request, 'contact.html', {'form': form_class})
 
@@ -66,6 +66,12 @@ def about(request):
 
 def offer(request):
     return render_to_response('offer.html',
+            {'': ''},
+            context_instance=RequestContext(request))
+
+
+def success(request):
+    return render_to_response('success.html',
             {'': ''},
             context_instance=RequestContext(request))
 

@@ -10,7 +10,10 @@
 <b>Email:</b>
 {{ contact_email|safe|cut:"('"|cut:"',)" }}<br><br>
 
-Treść:
+<b>Strona:</b>
+{{ contact_webpage|safe|cut:"('"|cut:"',)" }}<br><br>
+
+<b>Treść:</b>
 {{ form_content|safe|striptags|cut:"('"|cut:"',)" }}
 
 </body>

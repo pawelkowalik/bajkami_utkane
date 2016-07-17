@@ -19,7 +19,7 @@ body {background: #c0bfba;}
 /***** Titles and Headings *****/
 h1, h2, h3, h4 , h5, h6 {
 	font-family: "Oswald", sans-serif;
-	color: rgba(29, 29, 29, 0.5);
+	color: #8B457F;
 	font-weight: normal;
 	text-transform:uppercase; 
 }	
@@ -42,7 +42,7 @@ h5.title-bg button {
 }
 
 /***** Links *****/
-a, a:hover { color: #732800; text-decoration: none;}
+a, a:hover { color: #8B457F; text-decoration: none;}
 
 /***** Misc *****/
 i {margin-right: 3px;}
@@ -189,6 +189,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; position: relative; m
 **************************************/
 .gallery img {margin: 0.5%; max-width: 97%;}
 .gallery img:hover { filter: brightness(110%);}
+.gallery .success {margin-top: 10%; margin-bottom: 40%;}
 
 @media (max-width: 768px){
 .gallery {padding-top: 10px; padding-bottom: 10px;}
